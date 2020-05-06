@@ -1,4 +1,4 @@
-DESCRIPTION = "A console-only image with docker support"
+DESCRIPTION = "A console-only image with docker-ce support"
 LICENSE = "MIT"
 
 inherit core-image distro_features_check
@@ -8,7 +8,7 @@ REQUIRED_DISTRO_FEATURES += "virtualization"
 IMAGE_FEATURES += "splash ssh-server-dropbear"
 
 IMAGE_INSTALL += " \
-    docker \
+    docker-ce \
     python3-docker-compose \
     packagegroup-basic \
     packagegroup-core-full-cmdline \
