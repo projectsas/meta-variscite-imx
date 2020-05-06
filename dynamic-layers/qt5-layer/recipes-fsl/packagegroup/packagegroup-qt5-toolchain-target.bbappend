@@ -1,14 +1,2 @@
-
-RDEPENDS_${PN}_remove = "qtquick1-dev \
-    qtquick1-mkspecs \
-    qtquick1-plugins \
-    qtquick1-qmlplugins \
-    qttranslations-qtquick1 \
-    qtwebkit-dev \
-    qtwebkit-mkspecs \
-    qtwebkit-qmlplugins \
-"
-
-RDEPENDS_${PN}_append = " \
-    qtdeclarative-tools \
-"
+# allow building the toolchian using "-c populate_sdk"
+inherit populate_sdk_qt5
