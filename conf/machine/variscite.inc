@@ -24,21 +24,13 @@ UBI_VOLNAME  = "rootfs"
 
 # Variscite BSP default providers
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-variscite"
-PREFERRED_VERSION_linux-variscite ?= "4.14.78"
+PREFERRED_VERSION_linux-variscite ?= "5.4.3"
 
 PREFERRED_PROVIDER_u-boot ?= "u-boot-variscite"
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-variscite"
 PREFERRED_PROVIDER_u-boot-fw-utils ?= "u-boot-fw-utils"
 
-PREFERRED_PROVIDER_wpa-supplicant-cli ?= "wpa-supplicant"
-PREFERRED_PROVIDER_wpa-supplicant-passphrase ?= "wpa-supplicant"
-PREFERRED_PROVIDER_wpa-supplicant ?= "wpa-supplicant"
-
-PREFERRED_RPROVIDER_ptpd ?= "ptpd"
-PREFERRED_RPROVIDER_ptpd-dev ?= "ptpd"
-
 MACHINE_EXTRA_RDEPENDS += " \
-			   crda \
 			   bridge-utils \
 			   connman \
 			   hostapd \
@@ -52,6 +44,7 @@ MACHINE_EXTRA_RDEPENDS += " \
 			   gptfdisk \
 			   tslib-calibrate \
 			   tslib-tests \
+               wireless-regdb-static \
 			   u-boot-fw-utils \
 			   u-boot-splash \
 			   wpa-supplicant \
@@ -62,9 +55,6 @@ MACHINE_EXTRA_RDEPENDS += " \
 IMAGE_INSTALL_append = " \
         fsl-rc-local \
 "
-
-BBMASK_prepend = "fsl-image-mfgtool-initramfs "
-BBMASK += "meta-freescale/dynamic-layers/browser-layer/recipes-browser/chromium"
 
 WKS_FILE = "imx-uboot-spl-bootpart.wks"
 IMAGE_FSTYPES += "tar.gz multiubi"
