@@ -23,11 +23,9 @@ MULTIUBI_BUILD ?= "128kbpeb 256kbpeb"
 UBI_VOLNAME  = "rootfs"
 
 # Variscite BSP default providers
-PREFERRED_PROVIDER_virtual/kernel ?= "linux-variscite"
 PREFERRED_VERSION_linux-variscite ?= "5.4.3"
 
-PREFERRED_PROVIDER_u-boot ?= "u-boot-variscite"
-PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-variscite"
+PREFERRED_PROVIDER_u-boot = "u-boot-variscite"
 PREFERRED_PROVIDER_u-boot-fw-utils ?= "u-boot-fw-utils"
 
 MACHINE_EXTRA_RDEPENDS += " \
@@ -76,3 +74,6 @@ multiubi_mkfs_prepend() {
 		awk -i inplace -v n=4 -v ERASESIZE="${MTD_ERASESIZE}" '/\/dev\/mtd/{$(n)=ERASESIZE}1' ${IMAGE_ROOTFS}${sysconfdir}/fw_env.config
 	fi
 }
+
+DISTRO_FEATURES_append = " virtualization"
+
