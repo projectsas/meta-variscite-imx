@@ -55,9 +55,7 @@ IMAGE_INSTALL_append = " \
 "
 
 WKS_FILE = "imx-uboot-bootpart.wks.in"
-
-#TEMP (skip wic) was +=
-IMAGE_FSTYPES = "tar.gz multiubi"
+IMAGE_FSTYPES = "tar.gz multiubi wic.gz"
 
 # do multiubi last
 IMAGE_TYPEDEP_multiubi += "${IMAGE_FSTYPES}"
