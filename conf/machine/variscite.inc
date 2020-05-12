@@ -54,8 +54,10 @@ IMAGE_INSTALL_append = " \
         fsl-rc-local \
 "
 
-WKS_FILE = "imx-uboot-spl-bootpart.wks"
-IMAGE_FSTYPES += "tar.gz multiubi"
+WKS_FILE = "imx-uboot-bootpart.wks.in"
+
+#TEMP (skip wic) was +=
+IMAGE_FSTYPES = "tar.gz multiubi"
 
 # do multiubi last
 IMAGE_TYPEDEP_multiubi += "${IMAGE_FSTYPES}"
