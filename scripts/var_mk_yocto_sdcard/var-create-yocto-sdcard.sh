@@ -19,7 +19,7 @@ if [[ -e ${YOCTO_ROOT}b2qt-init-build-env ]] ; then
 	readonly YOCTO_DEFAULT_IMAGE=b2qt-embedded-qt5-image
 else
 	readonly BSP_TYPE="YOCTO"
-	readonly YOCTO_BUILD=${YOCTO_ROOT}/build_x11
+	readonly YOCTO_BUILD=${YOCTO_ROOT}/var-dart-6ul-zeus-imx
 	readonly YOCTO_DEFAULT_IMAGE=fsl-image-gui
 fi
 echo "BSP type: ${BSP_TYPE}"
@@ -29,7 +29,7 @@ readonly YOCTO_IMGS_PATH=${YOCTO_BUILD}/tmp/deploy/images/${MACHINE}
 
 # Sizes are in MiB
 BOOTLOAD_RESERVE_SIZE=4
-BOOT_ROM_SIZE=8
+BOOT_ROM_SIZE=16
 DEFAULT_ROOTFS_SIZE=3700
 
 AUTO_FILL_SD=0
