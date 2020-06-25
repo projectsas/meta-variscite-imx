@@ -291,7 +291,7 @@ stop_udev()
 start_udev()
 {
 	if [ -f /lib/systemd/system/systemd-udevd.service ]; then
-		systemctl -q unmask systemd-udevd
+		systemctl -q unmask --runtime systemd-udevd
 		systemctl -q start systemd-udevd
 	else
 		/etc/init.d/udev start
